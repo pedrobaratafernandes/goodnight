@@ -20,6 +20,10 @@ Os executáveis prontos a usar estão na página de [**Releases**](https://githu
 - `goodnight-windows-x64.zip` → `goodnight.exe` (não precisa de instalação)
 - `goodnight-linux-x64.tar.gz` → `goodnight`
 
+Antes de descarregar, veja a [Code signing policy](#code-signing-policy).
+
+**Desinstalar:** a app não tem instalador. Basta apagar o executável e, se quiser, a pasta de configuração (ver [Configuração](#configuração)).
+
 É uma reimplementação de raiz do *Goodnight Timer 1.0* (freeware de 2006 para Windows), com as mesmas funcionalidades e algumas extra.
 
 ## Funcionalidades
@@ -95,3 +99,24 @@ src/system/windows.rs  volume e energia em Windows
 build.rs               embute o ícone e a versão no .exe (Windows)
 assets/icon.ico|png    ícone da aplicação
 ```
+
+## Code signing policy
+
+Free code signing provided by [SignPath.io](https://about.signpath.io/), certificate by [SignPath Foundation](https://signpath.org/).
+
+> **Estado:** candidatura à SignPath Foundation em análise. Até ser aprovada, os executáveis Windows das releases **não estão assinados**. Assim que for aprovada, todas as releases seguintes passam a ser assinadas automaticamente pelo GitHub Actions, a partir deste repositório.
+
+Só são assinados os executáveis compilados a partir do código deste repositório, pelo workflow [`build.yml`](.github/workflows/build.yml). Cada pedido de assinatura é aprovado manualmente.
+
+**Papéis da equipa**
+
+| Papel | Membros |
+|---|---|
+| Committers e revisores | [pedrobaratafernandes](https://github.com/pedrobaratafernandes) |
+| Aprovadores | [pedrobaratafernandes](https://github.com/pedrobaratafernandes) |
+
+**Privacidade**
+
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
+
+O Goodnight não recolhe nem envia dados. A única coisa que grava é a configuração local, em JSON (ver [Configuração](#configuração)).
